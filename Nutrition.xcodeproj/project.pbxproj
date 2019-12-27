@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B73206E323B5612700F68110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E223B5612700F68110 /* AppDelegate.swift */; };
 		B73206E523B5612700F68110 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E423B5612700F68110 /* SceneDelegate.swift */; };
-		B73206E723B5612700F68110 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E623B5612700F68110 /* ViewController.swift */; };
+		B73206E723B5612700F68110 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E623B5612700F68110 /* MainViewController.swift */; };
 		B73206EA23B5612700F68110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73206E823B5612700F68110 /* Main.storyboard */; };
 		B73206EC23B5612C00F68110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73206EB23B5612C00F68110 /* Assets.xcassets */; };
 		B73206EF23B5612C00F68110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73206ED23B5612C00F68110 /* LaunchScreen.storyboard */; };
@@ -17,13 +17,26 @@
 		B73206FA23B5788300F68110 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206F923B5788300F68110 /* AppError.swift */; };
 		B73206FD23B57AE200F68110 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206FC23B57AE200F68110 /* Food.swift */; };
 		B73206FF23B57C7D00F68110 /* FoodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206FE23B57C7D00F68110 /* FoodAPI.swift */; };
+		B732070223B5854700F68110 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732070123B5854700F68110 /* Secrets.swift */; };
+		B732070A23B5A28000F68110 /* NutritionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732070923B5A28000F68110 /* NutritionTests.swift */; };
+		B732071323B5C12D00F68110 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732071223B5C12D00F68110 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B732070C23B5A28000F68110 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B73206D723B5612700F68110 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B73206DE23B5612700F68110;
+			remoteInfo = Nutrition;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B73206DF23B5612700F68110 /* Nutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73206E223B5612700F68110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B73206E423B5612700F68110 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B73206E623B5612700F68110 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B73206E623B5612700F68110 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B73206E923B5612700F68110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B73206EB23B5612C00F68110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B73206EE23B5612C00F68110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,10 +45,22 @@
 		B73206F923B5788300F68110 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		B73206FC23B57AE200F68110 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B73206FE23B57C7D00F68110 /* FoodAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPI.swift; sourceTree = "<group>"; };
+		B732070123B5854700F68110 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		B732070723B5A28000F68110 /* NutritionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NutritionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B732070923B5A28000F68110 /* NutritionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTests.swift; sourceTree = "<group>"; };
+		B732070B23B5A28000F68110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B732071223B5C12D00F68110 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B73206DC23B5612700F68110 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B732070423B5A28000F68110 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				B73206E123B5612700F68110 /* Nutrition */,
+				B732070823B5A28000F68110 /* NutritionTests */,
 				B73206E023B5612700F68110 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B73206DF23B5612700F68110 /* Nutrition.app */,
+				B732070723B5A28000F68110 /* NutritionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,10 +92,11 @@
 			isa = PBXGroup;
 			children = (
 				B73206E223B5612700F68110 /* AppDelegate.swift */,
+				B732070023B5853300F68110 /* Secrets */,
 				B73206F623B5781800F68110 /* Networking */,
 				B73206FB23B57ABE00F68110 /* Model */,
 				B73206E423B5612700F68110 /* SceneDelegate.swift */,
-				B73206E623B5612700F68110 /* ViewController.swift */,
+				B732071123B5BBCB00F68110 /* Controllers */,
 				B73206E823B5612700F68110 /* Main.storyboard */,
 				B73206EB23B5612C00F68110 /* Assets.xcassets */,
 				B73206ED23B5612C00F68110 /* LaunchScreen.storyboard */,
@@ -95,6 +123,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B732070023B5853300F68110 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				B732070123B5854700F68110 /* Secrets.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		B732070823B5A28000F68110 /* NutritionTests */ = {
+			isa = PBXGroup;
+			children = (
+				B732070923B5A28000F68110 /* NutritionTests.swift */,
+				B732070B23B5A28000F68110 /* Info.plist */,
+			);
+			path = NutritionTests;
+			sourceTree = "<group>";
+		};
+		B732071123B5BBCB00F68110 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B73206E623B5612700F68110 /* MainViewController.swift */,
+				B732071223B5C12D00F68110 /* SearchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +169,24 @@
 			productReference = B73206DF23B5612700F68110 /* Nutrition.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B732070623B5A28000F68110 /* NutritionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B732070E23B5A28000F68110 /* Build configuration list for PBXNativeTarget "NutritionTests" */;
+			buildPhases = (
+				B732070323B5A28000F68110 /* Sources */,
+				B732070423B5A28000F68110 /* Frameworks */,
+				B732070523B5A28000F68110 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B732070D23B5A28000F68110 /* PBXTargetDependency */,
+			);
+			name = NutritionTests;
+			productName = NutritionTests;
+			productReference = B732070723B5A28000F68110 /* NutritionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,6 +199,10 @@
 				TargetAttributes = {
 					B73206DE23B5612700F68110 = {
 						CreatedOnToolsVersion = 11.2;
+					};
+					B732070623B5A28000F68110 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = B73206DE23B5612700F68110;
 					};
 				};
 			};
@@ -144,6 +220,7 @@
 			projectRoot = "";
 			targets = (
 				B73206DE23B5612700F68110 /* Nutrition */,
+				B732070623B5A28000F68110 /* NutritionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -159,6 +236,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B732070523B5A28000F68110 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -167,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B73206F823B5783700F68110 /* NetworkHelper.swift in Sources */,
-				B73206E723B5612700F68110 /* ViewController.swift in Sources */,
+				B732070223B5854700F68110 /* Secrets.swift in Sources */,
+				B73206E723B5612700F68110 /* MainViewController.swift in Sources */,
+				B732071323B5C12D00F68110 /* SearchViewController.swift in Sources */,
 				B73206FA23B5788300F68110 /* AppError.swift in Sources */,
 				B73206E323B5612700F68110 /* AppDelegate.swift in Sources */,
 				B73206FF23B57C7D00F68110 /* FoodAPI.swift in Sources */,
@@ -176,7 +262,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B732070323B5A28000F68110 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B732070A23B5A28000F68110 /* NutritionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B732070D23B5A28000F68110 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B73206DE23B5612700F68110 /* Nutrition */;
+			targetProxy = B732070C23B5A28000F68110 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B73206E823B5612700F68110 /* Main.storyboard */ = {
@@ -348,6 +450,46 @@
 			};
 			name = Release;
 		};
+		B732070F23B5A28000F68110 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WDT827LK75;
+				INFOPLIST_FILE = NutritionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amy.NutritionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nutrition.app/Nutrition";
+			};
+			name = Debug;
+		};
+		B732071023B5A28000F68110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WDT827LK75;
+				INFOPLIST_FILE = NutritionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amy.NutritionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nutrition.app/Nutrition";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -365,6 +507,15 @@
 			buildConfigurations = (
 				B73206F423B5612C00F68110 /* Debug */,
 				B73206F523B5612C00F68110 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B732070E23B5A28000F68110 /* Build configuration list for PBXNativeTarget "NutritionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B732070F23B5A28000F68110 /* Debug */,
+				B732071023B5A28000F68110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
