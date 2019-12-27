@@ -19,7 +19,7 @@ class NutritionTests: XCTestCase {
         
         
         //act
-        FoodAPIClient.getFoods(searchQuery: searchQuery) { (result) in
+        FoodAPIClient.getFoodList(searchQuery: searchQuery) { (result) in
             switch result {
             case .failure(let appError):
                 XCTFail("appError: \(appError)")

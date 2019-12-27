@@ -9,9 +9,9 @@
 import Foundation
 
 struct FoodAPIClient {
-    static func getFoods(searchQuery: String, completion: @escaping (Result<[Food], AppError>)-> ()) {
+    static func getFoodList(searchQuery: String, completion: @escaping (Result<[Food], AppError>)-> ()) {
        
-         let endpointURL = "https://api.nutritionix.com/v1_1/search/\(searchQuery)?results=0%3A20&cal_min=0&cal_max=50000&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=\(SecretKey.appId)&appKey=\(SecretKey.appkey)"
+         let endpointURL = "https://api.nutritionix.com/v1_1/search/\(searchQuery)?results=0%3A35&cal_min=0&cal_max=50000&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=\(SecretKey.appId)&appKey=\(SecretKey.appkey)"
         
         guard let url = URL(string: endpointURL) else {
             completion(.failure(.badURL(endpointURL))) //  assigning the competion handler a failure
@@ -38,4 +38,8 @@ struct FoodAPIClient {
 
     }
 }
+    
+    static func getFoodInfo() {
+        
+    }
 }

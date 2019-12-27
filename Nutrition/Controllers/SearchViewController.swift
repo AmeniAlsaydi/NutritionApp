@@ -21,17 +21,24 @@ class SearchViewController: UIViewController {
         }
     }
     
-    let searchQuery = "taco"
+    var searchQuery = "" {
+        didSet {
+            DispatchQueue.main.async {
+                self.searchFoods()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        searchFoods(searchQuery: searchQuery)
+        searchBar.delegate = self
+        searchFoods()
 
     }
 
-    func searchFoods(searchQuery: String) {
-        FoodAPIClient.getFoods(searchQuery: searchQuery) { (result) in
+    func searchFoods() {
+        FoodAPIClient.getFoodList(searchQuery: searchQuery) { (result) in
             switch result {
             case .failure(let appError):
                 print("appError: \(appError)")
@@ -58,10 +65,29 @@ extension SearchViewController: UITableViewDataSource {
         let food = foods[indexPath.row]
         
         cell.textLabel?.text = food.fields.item_name
-        cell.detailTextLabel?.text = food.fields.item_id
+        cell.detailTextLabel?.text = "\(food.fields.brand_name)"
         
         return cell
     }
     
     
 }
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+            
+            guard let searchText = searchBar.text else {
+                return
+            }
+            
+            guard !searchText.isEmpty else {
+                searchFoods()
+                return
+            }
+            
+            searchQuery = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "no"
+            
+        }
+    }
+

@@ -20,6 +20,7 @@
 		B732070223B5854700F68110 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732070123B5854700F68110 /* Secrets.swift */; };
 		B732070A23B5A28000F68110 /* NutritionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732070923B5A28000F68110 /* NutritionTests.swift */; };
 		B732071323B5C12D00F68110 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732071223B5C12D00F68110 /* SearchViewController.swift */; };
+		B74A25E123B6BE990067CD7B /* FoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E023B6BE990067CD7B /* FoodInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B732070923B5A28000F68110 /* NutritionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTests.swift; sourceTree = "<group>"; };
 		B732070B23B5A28000F68110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B732071223B5C12D00F68110 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B74A25E023B6BE990067CD7B /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B73206FC23B57AE200F68110 /* Food.swift */,
+				B74A25E023B6BE990067CD7B /* FoodInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				B73206F823B5783700F68110 /* NetworkHelper.swift in Sources */,
 				B732070223B5854700F68110 /* Secrets.swift in Sources */,
 				B73206E723B5612700F68110 /* MainViewController.swift in Sources */,
+				B74A25E123B6BE990067CD7B /* FoodInfo.swift in Sources */,
 				B732071323B5C12D00F68110 /* SearchViewController.swift in Sources */,
 				B73206FA23B5788300F68110 /* AppError.swift in Sources */,
 				B73206E323B5612700F68110 /* AppDelegate.swift in Sources */,
