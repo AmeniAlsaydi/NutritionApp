@@ -20,5 +20,6 @@ struct Food: Codable {
 struct Feild: Codable {
     let item_id: String
     let item_name: String
+    let brand_name: String
 }
 
