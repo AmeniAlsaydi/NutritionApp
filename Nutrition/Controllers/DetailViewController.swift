@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var carbsLabel: UILabel!
     @IBOutlet weak var sugarLabel: UILabel!
     
-    var foodItem: Food?
+    var selectedFood: Food?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,11 @@ class DetailViewController: UIViewController {
     
     func updateUI() {
         
+        guard let selectedFood = selectedFood else {
+            fatalError("issue with segue")
+        }
+        itemNameLabel.text = selectedFood.fields.item_name
+        brandNameLabel.text = selectedFood.fields.brand_name
     }
     
 

@@ -36,6 +36,14 @@ class SearchViewController: UIViewController {
         searchFoods()
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailViewController, let indexpath = tableView.indexPathForSelectedRow else {
+            fatalError("couldnt get detailVC or indexPath")
+        }
+        
+        detailVC.selectedFood = foods[indexpath.row]
+    }
 
     func searchFoods() {
         FoodAPIClient.getFoodList(searchQuery: searchQuery) { (result) in
