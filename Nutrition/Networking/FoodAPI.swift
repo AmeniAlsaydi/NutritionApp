@@ -39,7 +39,36 @@ struct FoodAPIClient {
     }
 }
     
-    static func getFoodInfo() {
+    static func getFoodInfo(itemID: String, completion: @escaping (Result<FoodInfo, AppError>)-> ()) {
+        
+        let endpointURL = "https://api.nutritionix.com/v1_1/item?id=\(itemID)&appId=\(SecretKey.appId)&appKey=\(SecretKey.appkey)"
+        guard let url = URL(string: endpointURL) else {
+                 completion(.failure(.badURL(endpointURL))) //  assigning the competion handler a failure
+                 return
+             }
+             
+             let request = URLRequest(url: url)
+             
+             NetworkHelper.shared.performDataTask(with: request) {(result) in
+                 switch result {
+                 case .failure(let appError):
+                     completion(.failure(.networkClientError(appError)))
+                 case .success(let data):
+                     do {
+                         let foodInfo = try JSONDecoder().decode(FoodInfo.self, from: data)
+                         completion(.success(foodInfo))
+                     } catch {
+                         completion(.failure(.decodingError(error)))
+                     }
+                     
+                 }
+
+
+         }
+        
+        
+        
+        
         
     }
 }
