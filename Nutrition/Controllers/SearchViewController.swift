@@ -72,8 +72,8 @@ extension SearchViewController: UITableViewDataSource {
        
         let food = foods[indexPath.row]
         
-        cell.textLabel?.text = food.fields.item_name
-        cell.detailTextLabel?.text = "\(food.fields.brand_name)"
+        cell.textLabel?.text = food.fields.item_name.capitalized
+        cell.detailTextLabel?.text = food.fields.brand_name
         
         return cell
     }
