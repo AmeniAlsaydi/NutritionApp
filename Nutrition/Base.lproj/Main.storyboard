@@ -282,26 +282,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-HK-V4p">
-                                <rect key="frame" x="20" y="337" width="144" height="43"/>
+                                <rect key="frame" x="20" y="168" width="144" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUc-NJ-KfR">
-                                <rect key="frame" x="157" y="204" width="100" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="2"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUc-NJ-KfR">
+                                <rect key="frame" x="20" y="513" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="3Bg-dB-wZf"/>
+                                    <constraint firstAttribute="height" constant="90" id="Qsk-bh-FLo"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="add"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCg-7m-Omv">
-                                <rect key="frame" x="294" y="205" width="100" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="3"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-MD-3na">
-                                <rect key="frame" x="20" y="204" width="101" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search" image="1"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-MD-3na">
+                                <rect key="frame" x="20" y="403" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="5yy-oe-Nbt"/>
+                                    <constraint firstAttribute="width" constant="90" id="Wlr-Rx-6ut"/>
+                                </constraints>
+                                <state key="normal" title="Search" image="search"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="EyF-Zt-lIn"/>
                                 </connections>
@@ -313,8 +314,104 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCg-7m-Omv">
+                                <rect key="frame" x="20" y="623" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="LfX-xU-fMG"/>
+                                    <constraint firstAttribute="height" constant="90" id="aah-cn-Vgl"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="log"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TQ-vC-tQH">
+                                <rect key="frame" x="118" y="431.5" width="288" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Find food information ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="OOz-ux-b0J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Caf-VL-afC">
+                                <rect key="frame" x="118" y="541.5" width="288" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Make your own">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8w-oT-PB6">
+                                <rect key="frame" x="118" y="651.5" width="288" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Log your meal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find info on common, restrurant or market items." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-Sg-caW">
+                                <rect key="frame" x="118" y="464.5" width="288" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track meals easily" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPU-2P-9wt">
+                                <rect key="frame" x="118" y="684.5" width="288" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line2" translatesAutoresizingMaskIntoConstraints="NO" id="rgi-Up-RPm">
+                                <rect key="frame" x="22" y="487" width="370.00000000000045" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="370" id="LEP-2k-ju0"/>
+                                    <constraint firstAttribute="height" constant="25" id="OpE-p2-75x"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line2" translatesAutoresizingMaskIntoConstraints="NO" id="gJ4-oa-FDz">
+                                <rect key="frame" x="22" y="598.5" width="370.00000000000045" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="370" id="0wM-fi-DmZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="16J-CT-d2W"/>
+                                    <constraint firstAttribute="height" constant="25" id="3uu-rV-a5W"/>
+                                    <constraint firstAttribute="width" constant="370" id="J0V-O2-gRP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an item using any item on our list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsX-gS-Z1a">
+                                <rect key="frame" x="118" y="574.5" width="288" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GUM-ef-9wz" firstAttribute="trailing" secondItem="xsX-gS-Z1a" secondAttribute="trailing" constant="8" id="3L9-FU-1Si"/>
+                            <constraint firstItem="Kdb-MD-3na" firstAttribute="centerY" secondItem="L0L-wG-fRA" secondAttribute="centerY" id="4KM-X9-bJW"/>
+                            <constraint firstItem="zCg-7m-Omv" firstAttribute="leading" secondItem="GUM-ef-9wz" secondAttribute="leading" constant="20" id="7Up-Jp-8Vr"/>
+                            <constraint firstItem="Ily-Sg-caW" firstAttribute="leading" secondItem="Kdb-MD-3na" secondAttribute="trailing" constant="8" id="9L8-an-D4V"/>
+                            <constraint firstItem="rgi-Up-RPm" firstAttribute="centerX" secondItem="L0L-wG-fRA" secondAttribute="centerX" id="9e9-ap-z38"/>
+                            <constraint firstItem="GUM-ef-9wz" firstAttribute="trailing" secondItem="3TQ-vC-tQH" secondAttribute="trailing" constant="8" id="9su-dd-f3w"/>
+                            <constraint firstItem="UPU-2P-9wt" firstAttribute="leading" secondItem="zCg-7m-Omv" secondAttribute="trailing" constant="8" id="AgW-9z-vDx"/>
+                            <constraint firstItem="GUM-ef-9wz" firstAttribute="trailing" secondItem="Ily-Sg-caW" secondAttribute="trailing" constant="8" id="EKU-L8-RIB"/>
+                            <constraint firstItem="Caf-VL-afC" firstAttribute="leading" secondItem="cUc-NJ-KfR" secondAttribute="trailing" constant="8" id="Exv-R8-kBw"/>
+                            <constraint firstItem="zCg-7m-Omv" firstAttribute="top" secondItem="cUc-NJ-KfR" secondAttribute="bottom" constant="20" id="Hce-Ld-yJ7"/>
+                            <constraint firstItem="cUc-NJ-KfR" firstAttribute="leading" secondItem="GUM-ef-9wz" secondAttribute="leading" constant="20" id="He0-QA-exX"/>
+                            <constraint firstItem="xsX-gS-Z1a" firstAttribute="leading" secondItem="cUc-NJ-KfR" secondAttribute="trailing" constant="8" id="K2w-7H-Ac9"/>
+                            <constraint firstItem="GUM-ef-9wz" firstAttribute="trailing" secondItem="UPU-2P-9wt" secondAttribute="trailing" constant="8" id="MDR-5N-kwC"/>
+                            <constraint firstItem="GUM-ef-9wz" firstAttribute="trailing" secondItem="Caf-VL-afC" secondAttribute="trailing" constant="8" id="Moe-AU-m9c"/>
+                            <constraint firstItem="Caf-VL-afC" firstAttribute="centerY" secondItem="cUc-NJ-KfR" secondAttribute="centerY" id="RUw-Jg-MmF"/>
+                            <constraint firstItem="xsX-gS-Z1a" firstAttribute="top" secondItem="Caf-VL-afC" secondAttribute="bottom" id="SOJ-Dx-LKG"/>
+                            <constraint firstItem="Ily-Sg-caW" firstAttribute="top" secondItem="3TQ-vC-tQH" secondAttribute="bottom" id="UZt-cy-5z5"/>
+                            <constraint firstItem="3TQ-vC-tQH" firstAttribute="centerY" secondItem="Kdb-MD-3na" secondAttribute="centerY" id="bG2-cW-iru"/>
+                            <constraint firstItem="3TQ-vC-tQH" firstAttribute="leading" secondItem="Kdb-MD-3na" secondAttribute="trailing" constant="8" id="ez7-ps-gwN"/>
+                            <constraint firstItem="Kdb-MD-3na" firstAttribute="leading" secondItem="GUM-ef-9wz" secondAttribute="leading" constant="20" id="gGc-BQ-a5P"/>
+                            <constraint firstItem="UPU-2P-9wt" firstAttribute="top" secondItem="V8w-oT-PB6" secondAttribute="bottom" id="gyP-jJ-Xc2"/>
+                            <constraint firstItem="GUM-ef-9wz" firstAttribute="trailing" secondItem="V8w-oT-PB6" secondAttribute="trailing" constant="8" id="iP5-jR-K1U"/>
+                            <constraint firstItem="gJ4-oa-FDz" firstAttribute="top" secondItem="xsX-gS-Z1a" secondAttribute="bottom" constant="8" id="kvN-Gn-Yqx"/>
+                            <constraint firstItem="V8w-oT-PB6" firstAttribute="leading" secondItem="zCg-7m-Omv" secondAttribute="trailing" constant="8" id="lSW-89-VW9"/>
+                            <constraint firstItem="V8w-oT-PB6" firstAttribute="centerY" secondItem="zCg-7m-Omv" secondAttribute="centerY" id="lqJ-y6-LrY"/>
+                            <constraint firstItem="gJ4-oa-FDz" firstAttribute="centerX" secondItem="L0L-wG-fRA" secondAttribute="centerX" id="p2V-AG-fft"/>
+                            <constraint firstItem="rgi-Up-RPm" firstAttribute="top" secondItem="Ily-Sg-caW" secondAttribute="bottom" constant="8" id="rj1-lW-y9N"/>
+                            <constraint firstItem="cUc-NJ-KfR" firstAttribute="top" secondItem="Kdb-MD-3na" secondAttribute="bottom" constant="20" id="vWo-mm-gRP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GUM-ef-9wz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="PS2-ig-dNR"/>
@@ -390,12 +487,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="500" height="500"/>
-        <image name="2" width="500" height="500"/>
-        <image name="3" width="500" height="500"/>
         <image name="Line" width="1186" height="122"/>
+        <image name="add" width="500" height="500"/>
         <image name="bookmark" catalog="system" width="56" height="64"/>
         <image name="house" catalog="system" width="64" height="54"/>
+        <image name="line2" width="1772" height="100"/>
+        <image name="log" width="500" height="500"/>
         <image name="person" catalog="system" width="64" height="58"/>
+        <image name="search" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EyF-Zt-lIn"/>
+    </inferredMetricsTieBreakers>
 </document>

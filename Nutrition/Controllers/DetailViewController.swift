@@ -54,6 +54,13 @@ class DetailViewController: UIViewController {
                     self.carbsLabel.text = "Carbohydrates: \(nutrition.nf_total_carbohydrate?.description ?? "N/A")"
                     self.sugarLabel.text = "Sugar: \(nutrition.nf_sugars?.description ?? "N/A")"
                     self.servingSizeLabel.text = "Serving Size: \(nutrition.nf_serving_size_qty?.description ?? "N/A") \(nutrition.nf_serving_size_unit ?? "")"
+                    
+                    self.protein.text = "Protein: \(nutrition.nf_protein?.description ?? "N/A")"
+                    self.sodium.text = "Sodium: \(nutrition.nf_sodium?.description ?? "N/A")"
+                    self.totalFat.text = "Total Fat: \(nutrition.nf_total_fat?.description ?? "N/A")"
+                    self.satFat.text = "Saturated Fat: \(nutrition.nf_saturated_fat?.description ?? "N/A")"
+                    self.transFat.text = "Trans Fat: \(nutrition.nf_trans_fatty_acid?.description ?? "N/A")"
+                    
                 }
             }
         }
