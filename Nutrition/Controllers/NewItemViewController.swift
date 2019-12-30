@@ -24,6 +24,7 @@ class NewItemViewController: UIViewController {
     var searchQuery = ""
     
     var createdFoods = [addedFood]()
+    var ingredients = [Food]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,18 +53,21 @@ class NewItemViewController: UIViewController {
     
     @IBAction func newMealButtonPressed(_ sender: UIButton) {
         
-        
         guard let mealName = textFeild.text, !mealName.isEmpty else {
             showAlert(title: "Missing Field", message: "Meal name missing")
             return
         }
-        let newItem = addedFood(name: mealName, numberOfCals: 10)
+        let newItem = addedFood(name: mealName, ingredients: ingredients)
+        
         createdFoods.append(newItem)
         
         // at the end
         showAlert(title: "Meal Added", message: "✅")
         
         dump(createdFoods)
+        ingredients = [Food]() // empty foods
+        
+        //TO DO: Re-enable the add buttons for the cell once a new meal has been created
 
     }
     
@@ -83,8 +87,6 @@ extension NewItemViewController: UITableViewDataSource {
         cell.delegate = self
         return cell
     }
-    
-    
 }
 
 extension NewItemViewController: UITableViewDelegate {
@@ -94,12 +96,10 @@ extension NewItemViewController: UITableViewDelegate {
 }
 
 extension NewItemViewController: FoodCellDelegate {
-    func didAddItem(foodName: String, foodID: String) {
-        print(foodName)
-        print(foodID)
+    func didAddItem(ingredient: Food) {
+        ingredients.append(ingredient)
+        //dump(ingredients)
     }
-    
-    
 }
 
 // NOTES:

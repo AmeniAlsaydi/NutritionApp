@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FoodCellDelegate {
-    func didAddItem(foodName: String, foodID: String)
+    func didAddItem(ingredient: Food)
 }
 
 class FoodCell: UITableViewCell {
@@ -29,7 +29,9 @@ class FoodCell: UITableViewCell {
     
     
     @IBAction func addItemPressed(_ sender: UIButton) {
-        delegate?.didAddItem(foodName: selectedFood.fields.item_name, foodID: selectedFood.fields.item_id)
+        addButton.setImage(nil, for: .normal)
+        addButton.isEnabled = false
+        delegate?.didAddItem(ingredient: selectedFood)
         
     }
     
