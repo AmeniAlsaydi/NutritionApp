@@ -26,7 +26,6 @@ class FoodCell: UITableViewCell {
         brandLabel.text = foodItem.fields.brand_name
     }
     
- 
     
     @IBAction func addItemPressed(_ sender: UIButton) {
         delegate?.didAddItem(foodName: selectedFood.fields.item_name, foodID: selectedFood.fields.item_id)
