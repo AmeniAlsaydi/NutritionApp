@@ -11,5 +11,5 @@ import Foundation
 struct addedFood {
     let name: String
     let ingredients: [Food]
-    //let numberOfCals: Int?
+    let numberOfCals: Double?
 }

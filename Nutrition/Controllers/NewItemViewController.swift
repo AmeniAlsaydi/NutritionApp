@@ -9,29 +9,31 @@
 import UIKit
 
 class NewItemViewController: UIViewController {
-
+    
     @IBOutlet weak var textFeild: UITextField!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     var foods = [Food]() {
-           didSet {
-               DispatchQueue.main.async {
-                   self.tableView.reloadData() // updating UI
-               }
-           }
-       }
-    var searchQuery = ""
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData() // updating UI
+            }
+        }
+    }
+    var searchQuery = "" // TODO: fix search bar
     
-    var createdFoods = [addedFood]()
+    
+    static var createdFoods = [addedFood]() // i made this static so i can reference them in another vc ???
     var ingredients = [Food]()
+    var newMeal: addedFood?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         searchFoods()
-
+        
         
     }
     
@@ -44,10 +46,24 @@ class NewItemViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.foods = foods
                 }
-                
             }
         }
+    }
+    
+    func getNumCals(ingredients: [Food]) -> Double {
+        var numOfCals: Double = 0
         
+        for ingredient in ingredients {
+            FoodAPIClient.getFoodInfo(itemID: ingredient.fields.item_id) { (result) in
+                switch result {
+                case .failure(let appError):
+                    print("appError: \(appError)")
+                case .success(let foodInfo):
+                    numOfCals += foodInfo.nf_calories ?? 0
+                }
+            }
+        }
+        return numOfCals
     }
     
     
@@ -57,18 +73,18 @@ class NewItemViewController: UIViewController {
             showAlert(title: "Missing Field", message: "Meal name missing")
             return
         }
-        let newItem = addedFood(name: mealName, ingredients: ingredients)
+        newMeal = addedFood(name: mealName, ingredients: ingredients, numberOfCals: getNumCals(ingredients: ingredients))
         
-        createdFoods.append(newItem)
+        NewItemViewController.createdFoods.append(newMeal!) // I force unwrapped this.. feels dangerous
         
         // at the end
         showAlert(title: "Meal Added", message: "✅")
         
-        dump(createdFoods)
-        ingredients = [Food]() // empty foods
+        dump(NewItemViewController.createdFoods)
+        ingredients = [Food]() // empties out foods
         
         //TO DO: Re-enable the add buttons for the cell once a new meal has been created
-
+        
     }
     
 }
@@ -103,10 +119,6 @@ extension NewItemViewController: FoodCellDelegate {
 }
 
 // NOTES:
-// The custom cell will have:
-    // - The food name
-    // - The brand
-    // - A plus sign that will then add that food item to the array of food in the addedFood object along with the name that i get from the text feild
-    // To add the item using the button on the cell I need to figure how to link it to the specific cells info??? *****
-    // I think I could calulate the number of Calories but mapping through the [Food] -> this might not work because cal info is in the FoodInfo
-    // Do I need to create another tab to show the list of the created foods the user adds? or should it be saved/posted to a seperate api?
+
+// I think I could calulate the number of Calories but mapping through the [Food] -> this might not work because cal info is in the FoodInfo
+// Do I need to create another tab to show the list of the created foods the user adds? or should it be saved/posted to a seperate api?
