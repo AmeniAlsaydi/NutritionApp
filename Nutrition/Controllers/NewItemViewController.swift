@@ -80,6 +80,7 @@ extension NewItemViewController: UITableViewDataSource {
         }
         let foodItem = foods[indexPath.row]
         cell.configureCell(foodItem: foodItem)
+        cell.delegate = self
         return cell
     }
     
@@ -90,6 +91,15 @@ extension NewItemViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+}
+
+extension NewItemViewController: FoodCellDelegate {
+    func didAddItem(foodName: String, foodID: String) {
+        print(foodName)
+        print(foodID)
+    }
+    
+    
 }
 
 // NOTES:

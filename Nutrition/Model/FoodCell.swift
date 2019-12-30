@@ -22,6 +22,7 @@ class FoodCell: UITableViewCell {
     var delegate: FoodCellDelegate?
     
     func configureCell(foodItem: Food) {
+        selectedFood = foodItem // here we assign the selected Food with what was passed/selected from the View controller
         nameLabel.text = foodItem.fields.item_name
         brandLabel.text = foodItem.fields.brand_name
     }
