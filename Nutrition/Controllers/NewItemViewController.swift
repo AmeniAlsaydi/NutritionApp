@@ -59,11 +59,13 @@ class NewItemViewController: UIViewController {
                 case .failure(let appError):
                     print("appError: \(appError)")
                 case .success(let foodInfo):
+                    print("calories: \(foodInfo.nf_calories)")
                     numOfCals += foodInfo.nf_calories ?? 0
                 }
             }
         }
-        return numOfCals
+        print("calories in function: \(numOfCals)")
+        return numOfCals // this returns 0 because the closure doesnt return, need to use a completeion handler 
     }
     
     
@@ -73,7 +75,9 @@ class NewItemViewController: UIViewController {
             showAlert(title: "Missing Field", message: "Meal name missing")
             return
         }
-        newMeal = addedFood(name: mealName, ingredients: ingredients, numberOfCals: getNumCals(ingredients: ingredients))
+        let numCals = getNumCals(ingredients: ingredients)
+        print("In button \(numCals)")
+        newMeal = addedFood(name: mealName, ingredients: ingredients, numberOfCals: numCals)
         
         NewItemViewController.createdFoods.append(newMeal!) // I force unwrapped this.. feels dangerous
         
