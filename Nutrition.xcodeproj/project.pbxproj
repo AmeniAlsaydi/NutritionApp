@@ -24,6 +24,7 @@
 		B74A25E323B6CA110067CD7B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E223B6CA110067CD7B /* DetailViewController.swift */; };
 		B74A25E523B713570067CD7B /* addedFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E423B713570067CD7B /* addedFood.swift */; };
 		B74A25E723B716120067CD7B /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E623B716120067CD7B /* NewItemViewController.swift */; };
+		B74A25EA23BA23C00067CD7B /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E923BA23C00067CD7B /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		B74A25E223B6CA110067CD7B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B74A25E423B713570067CD7B /* addedFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addedFood.swift; sourceTree = "<group>"; };
 		B74A25E623B716120067CD7B /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		B74A25E923BA23C00067CD7B /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				B73206E223B5612700F68110 /* AppDelegate.swift */,
+				B74A25E823BA23740067CD7B /* Extensions */,
 				B732070023B5853300F68110 /* Secrets */,
 				B73206F623B5781800F68110 /* Networking */,
 				B73206FB23B57ABE00F68110 /* Model */,
@@ -159,6 +162,14 @@
 				B74A25E623B716120067CD7B /* NewItemViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B74A25E823BA23740067CD7B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B74A25E923BA23C00067CD7B /* Alerts.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 				B73206FF23B57C7D00F68110 /* FoodAPI.swift in Sources */,
 				B73206E523B5612700F68110 /* SceneDelegate.swift in Sources */,
 				B73206FD23B57AE200F68110 /* Food.swift in Sources */,
+				B74A25EA23BA23C00067CD7B /* Alerts.swift in Sources */,
 				B74A25E723B716120067CD7B /* NewItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
