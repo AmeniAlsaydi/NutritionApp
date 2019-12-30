@@ -25,6 +25,7 @@
 		B74A25E523B713570067CD7B /* addedFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E423B713570067CD7B /* addedFood.swift */; };
 		B74A25E723B716120067CD7B /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E623B716120067CD7B /* NewItemViewController.swift */; };
 		B74A25EA23BA23C00067CD7B /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25E923BA23C00067CD7B /* Alerts.swift */; };
+		B74A25EC23BA2B650067CD7B /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A25EB23BA2B650067CD7B /* FoodCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		B74A25E423B713570067CD7B /* addedFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addedFood.swift; sourceTree = "<group>"; };
 		B74A25E623B716120067CD7B /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		B74A25E923BA23C00067CD7B /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		B74A25EB23BA2B650067CD7B /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				B73206FC23B57AE200F68110 /* Food.swift */,
 				B74A25E423B713570067CD7B /* addedFood.swift */,
+				B74A25EB23BA2B650067CD7B /* FoodCell.swift */,
 				B74A25E023B6BE990067CD7B /* FoodInfo.swift */,
 			);
 			path = Model;
@@ -280,6 +283,7 @@
 				B74A25E123B6BE990067CD7B /* FoodInfo.swift in Sources */,
 				B732071323B5C12D00F68110 /* SearchViewController.swift in Sources */,
 				B73206FA23B5788300F68110 /* AppError.swift in Sources */,
+				B74A25EC23BA2B650067CD7B /* FoodCell.swift in Sources */,
 				B73206E323B5612700F68110 /* AppDelegate.swift in Sources */,
 				B74A25E523B713570067CD7B /* addedFood.swift in Sources */,
 				B73206FF23B57C7D00F68110 /* FoodAPI.swift in Sources */,

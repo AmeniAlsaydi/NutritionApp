@@ -14,7 +14,7 @@ class NewItemViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var createdFood = [addedFood]()
+    var createdFoods = [addedFood]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,19 @@ class NewItemViewController: UIViewController {
     
     @IBAction func newMealButtonPressed(_ sender: UIButton) {
         
+        
+        guard let mealName = textFeild.text, !mealName.isEmpty else {
+            showAlert(title: "Missing Field", message: "Meal name missing")
+            return
+        }
+        let newItem = addedFood(name: mealName, numberOfCals: 10)
+        createdFoods.append(newItem)
+        
+        // at the end
+        showAlert(title: "Meal Added", message: "✅")
+        
+        dump(createdFoods)
+
     }
     
 }
