@@ -21,10 +21,16 @@ class NewItemViewController: UIViewController {
             }
         }
     }
-    var searchQuery = "" // TODO: fix search bar
+    var searchQuery = ""  {
+        didSet {
+            DispatchQueue.main.async {
+                self.searchFoods()
+            }
+        }
+    }
     
     
-    static var createdFoods = [addedFood]() // i made this static so i can reference them in another vc ???
+    static var createdFoods = [addedFood]() // i made this static so i can try and reference them in another vc ???
     var ingredients = [Food]()
     var newMeal: addedFood?
     
@@ -33,6 +39,7 @@ class NewItemViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         searchFoods()
+        searchBar.delegate = self
         
         
     }
@@ -52,7 +59,11 @@ class NewItemViewController: UIViewController {
     
     func getNumCals(ingredients: [Food],completion: @escaping (Result<Double, AppError>)-> ()) {
         var numOfCals: Double = 0
-        let group = DispatchGroup()
+        let group = DispatchGroup() // group tasks for  asynchronous execution, When all work items finish executing, the group executes its completion handler.
+        
+        // https://www.reddit.com/r/iOSProgramming/comments/7srwon/completion_handler_is_called_before_loop_is/
+        
+        // apple doc: https://developer.apple.com/documentation/dispatch/dispatchgroup
         
         for ingredient in ingredients {
             group.enter()
@@ -63,17 +74,18 @@ class NewItemViewController: UIViewController {
                     completion(.failure(.networkClientError(appError)))
                 case .success(let foodInfo):
                     numOfCals += foodInfo.nf_calories ?? 0
-                    //completion(.success(numOfCals)) //  if here multiple dishes are added based on the number of ingredients
+                    //completion(.success(numOfCals)) //  without dispatchgrup if here multiple dishes are added based on the number of ingredients
                     
                 }
               group.leave()
             }
         }
         group.wait()
-        completion(.success(numOfCals)) // if here the num cals are not calculated
+        completion(.success(numOfCals)) // without dispatchgrup if here the num cals are not calculated
     }
     
-    @IBAction func barButtonPressed(_ sender: Any) {
+    @IBAction func createNewPressed(_ sender: Any) {
+        textFeild.text = nil
         ingredients = [Food]() // empties out foods
         dump(NewItemViewController.createdFoods)
         print(NewItemViewController.createdFoods.count)
@@ -139,6 +151,24 @@ extension NewItemViewController: FoodCellDelegate {
     func didAddItem(ingredient: Food) {
         ingredients.append(ingredient)
         //dump(ingredients)
+    }
+}
+
+extension NewItemViewController: UISearchBarDelegate {
+func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+        
+        guard let searchText = searchBar.text else {
+            return
+        }
+        
+        guard !searchText.isEmpty else {
+            searchFoods()
+            return
+        }
+        
+        searchQuery = searchText.lowercased().addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "no"
+        
     }
 }
 
