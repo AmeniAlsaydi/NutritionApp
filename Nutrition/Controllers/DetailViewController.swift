@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var addedButton: UIButton!
+    
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var brandNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -32,6 +34,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+    }
+    
+    
+    @IBAction func addedButtonPressed(_ sender: UIButton) {
+        
     }
     
     func updateUI() {

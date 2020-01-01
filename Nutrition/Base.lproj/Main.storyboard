@@ -135,6 +135,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.65065507840000003" green="0.68921723369999999" blue="0.84202963080000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button" image="bookmark" catalog="system"/>
+                                <connections>
+                                    <action selector="addedButtonPressed:" destination="Xhk-6Q-6pZ" eventType="touchUpInside" id="fyx-TI-oZ5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serving size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLL-b3-BNn">
                                 <rect key="frame" x="20" y="269" width="327" height="15"/>
@@ -243,6 +246,7 @@
                         <outlet property="caloriesLabel" destination="fwG-br-DNY" id="hD1-XT-XiN"/>
                         <outlet property="carbsLabel" destination="aru-St-037" id="aaE-JC-3uR"/>
                         <outlet property="descriptionLabel" destination="IZK-dg-2mm" id="f3E-xr-h2N"/>
+                        <outlet property="favoriteButton" destination="xah-r2-fin" id="Uz1-2A-5VY"/>
                         <outlet property="itemNameLabel" destination="ksk-Ga-3aT" id="x11-jL-ELI"/>
                         <outlet property="protein" destination="GRi-Uw-aJ4" id="PBP-JQ-ON8"/>
                         <outlet property="satFat" destination="20r-a9-vg0" id="ZPT-gP-Yjv"/>
@@ -558,7 +562,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uYH-0m-4ew"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AOc-dp-aQD"/>
+                    <navigationItem key="navigationItem" id="AOc-dp-aQD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="5yg-EH-7VG"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Y6L-nf-bVO" id="u7J-dU-Ula"/>
                         <outlet property="tableView" destination="73S-aG-jb0" id="xxg-8Q-6to"/>

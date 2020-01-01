@@ -50,7 +50,7 @@ class NewItemViewController: UIViewController {
         }
     }
     
-    func getNumCals(ingredients: [Food]) -> Double {
+    func getNumCals(ingredients: [Food],completion: @escaping (Result<Double, AppError>)-> ()) {
         var numOfCals: Double = 0
         
         for ingredient in ingredients {
@@ -58,14 +58,15 @@ class NewItemViewController: UIViewController {
                 switch result {
                 case .failure(let appError):
                     print("appError: \(appError)")
+                    completion(.failure(.networkClientError(appError)))
                 case .success(let foodInfo):
                     print("calories: \(foodInfo.nf_calories)")
                     numOfCals += foodInfo.nf_calories ?? 0
+                    print("calories in function: \(numOfCals)")
+                    completion(.success(numOfCals))
                 }
             }
         }
-        print("calories in function: \(numOfCals)")
-        return numOfCals // this returns 0 because the closure doesnt return, need to use a completeion handler 
     }
     
     
@@ -75,16 +76,27 @@ class NewItemViewController: UIViewController {
             showAlert(title: "Missing Field", message: "Meal name missing")
             return
         }
-        let numCals = getNumCals(ingredients: ingredients)
-        print("In button \(numCals)")
-        newMeal = addedFood(name: mealName, ingredients: ingredients, numberOfCals: numCals)
+        var numCals = 0.0
         
-        NewItemViewController.createdFoods.append(newMeal!) // I force unwrapped this.. feels dangerous
+        getNumCals(ingredients: ingredients) { (result) in
+            switch result {
+            case .failure(let appError):
+                print("here: \(appError)")
+            case .success(let returnednumCals):
+                numCals = returnednumCals
+                print("In button \(numCals)")
+                self.newMeal = addedFood(name: mealName, ingredients: self.ingredients, numberOfCals: numCals)
+                guard let newMeal = self.newMeal else {
+                    fatalError("no newMeal")
+                }
+                NewItemViewController.createdFoods.append(newMeal)
+                dump(NewItemViewController.createdFoods)
+            }
+        }
         
         // at the end
-        showAlert(title: "Meal Added", message: "✅")
+        showAlert(title: "\(mealName) added", message: "✅ 😋 ✅")
         
-        dump(NewItemViewController.createdFoods)
         ingredients = [Food]() // empties out foods
         
         //TO DO: Re-enable the add buttons for the cell once a new meal has been created
@@ -124,5 +136,5 @@ extension NewItemViewController: FoodCellDelegate {
 
 // NOTES:
 
-// I think I could calulate the number of Calories but mapping through the [Food] -> this might not work because cal info is in the FoodInfo
+// I think I could calulate the number of Calories by mapping through the [Food] -> this might not work because cal info is in the FoodInfo
 // Do I need to create another tab to show the list of the created foods the user adds? or should it be saved/posted to a seperate api?
