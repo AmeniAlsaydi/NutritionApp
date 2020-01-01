@@ -563,7 +563,11 @@
                         <viewLayoutGuide key="safeArea" id="uYH-0m-4ew"/>
                     </view>
                     <navigationItem key="navigationItem" id="AOc-dp-aQD">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="5yg-EH-7VG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="5yg-EH-7VG">
+                            <connections>
+                                <action selector="barButtonPressed:" destination="Hn9-o5-6DK" id="CHO-7a-WXa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Y6L-nf-bVO" id="u7J-dU-Ula"/>

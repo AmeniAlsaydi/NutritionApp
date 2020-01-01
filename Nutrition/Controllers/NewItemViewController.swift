@@ -52,23 +52,32 @@ class NewItemViewController: UIViewController {
     
     func getNumCals(ingredients: [Food],completion: @escaping (Result<Double, AppError>)-> ()) {
         var numOfCals: Double = 0
+        let group = DispatchGroup()
         
         for ingredient in ingredients {
+            group.enter()
             FoodAPIClient.getFoodInfo(itemID: ingredient.fields.item_id) { (result) in
                 switch result {
                 case .failure(let appError):
                     print("appError: \(appError)")
                     completion(.failure(.networkClientError(appError)))
                 case .success(let foodInfo):
-                    print("calories: \(foodInfo.nf_calories)")
                     numOfCals += foodInfo.nf_calories ?? 0
-                    print("calories in function: \(numOfCals)")
-                    completion(.success(numOfCals))
+                    //completion(.success(numOfCals)) //  if here multiple dishes are added based on the number of ingredients
+                    
                 }
+              group.leave()
             }
         }
+        group.wait()
+        completion(.success(numOfCals)) // if here the num cals are not calculated
     }
     
+    @IBAction func barButtonPressed(_ sender: Any) {
+        ingredients = [Food]() // empties out foods
+        dump(NewItemViewController.createdFoods)
+        print(NewItemViewController.createdFoods.count)
+    }
     
     @IBAction func newMealButtonPressed(_ sender: UIButton) {
         
@@ -83,21 +92,20 @@ class NewItemViewController: UIViewController {
             case .failure(let appError):
                 print("here: \(appError)")
             case .success(let returnednumCals):
+                print(returnednumCals) // this has
                 numCals = returnednumCals
-                print("In button \(numCals)")
                 self.newMeal = addedFood(name: mealName, ingredients: self.ingredients, numberOfCals: numCals)
                 guard let newMeal = self.newMeal else {
                     fatalError("no newMeal")
                 }
+                
                 NewItemViewController.createdFoods.append(newMeal)
-                dump(NewItemViewController.createdFoods)
+                
             }
         }
         
         // at the end
         showAlert(title: "\(mealName) added", message: "✅ 😋 ✅")
-        
-        ingredients = [Food]() // empties out foods
         
         //TO DO: Re-enable the add buttons for the cell once a new meal has been created
         
