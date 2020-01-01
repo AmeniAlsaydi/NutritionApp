@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2659" y="-648"/>
+            <point key="canvasLocation" x="3091" y="-664"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="WFs-vr-7Bx">
@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7n-8T-j6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3575" y="-648"/>
+            <point key="canvasLocation" x="4007" y="-664"/>
         </scene>
         <!--Your Account -->
         <scene sceneID="8QI-O5-eEf">
@@ -327,13 +327,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-HK-V4p">
-                                <rect key="frame" x="20" y="168" width="144" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUc-NJ-KfR">
                                 <rect key="frame" x="20" y="513" width="90" height="90"/>
                                 <constraints>
@@ -356,13 +349,6 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="EyF-Zt-lIn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take Control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgt-e2-gBi">
-                                <rect key="frame" x="20" y="119" width="374" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCg-7m-Omv">
                                 <rect key="frame" x="20" y="623" width="90" height="90"/>
                                 <constraints>
@@ -370,6 +356,9 @@
                                     <constraint firstAttribute="height" constant="90" id="aah-cn-Vgl"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="log"/>
+                                <connections>
+                                    <segue destination="gKL-Pu-uCw" kind="show" id="yb2-Ql-fiH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TQ-vC-tQH">
                                 <rect key="frame" x="118" y="431.5" width="288" height="33"/>
@@ -394,13 +383,22 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8w-oT-PB6">
                                 <rect key="frame" x="118" y="651.5" width="288" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Log your meal">
+                                <state key="normal" title="Meal Log">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gKL-Pu-uCw" kind="show" id="PIt-5f-pnc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find info on common, restrurant or market items." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-Sg-caW">
                                 <rect key="frame" x="118" y="464.5" width="288" height="14.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an item using any item on our list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsX-gS-Z1a">
+                                <rect key="frame" x="118" y="574.5" width="288" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -426,9 +424,14 @@
                                     <constraint firstAttribute="width" constant="370" id="J0V-O2-gRP"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an item using any item on our list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsX-gS-Z1a">
-                                <rect key="frame" x="118" y="574.5" width="288" height="16"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph image" translatesAutoresizingMaskIntoConstraints="NO" id="w1o-Gn-02W">
+                                <rect key="frame" x="20" y="182" width="372" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Todays Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-HK-V4p">
+                                <rect key="frame" x="20" y="139" width="374" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -467,6 +470,9 @@
                         <viewLayoutGuide key="safeArea" id="GUM-ef-9wz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="PS2-ig-dNR"/>
+                    <connections>
+                        <outlet property="todaysDateLabel" destination="r7C-HK-V4p" id="x2R-dH-Ozi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIG-8v-V7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -577,7 +583,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhC-x8-JH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657.971014492754" y="117.85714285714285"/>
+            <point key="canvasLocation" x="3091" y="108"/>
+        </scene>
+        <!--Meal Log-->
+        <scene sceneID="4AF-t2-kys">
+            <objects>
+                <viewController id="gKL-Pu-uCw" customClass="MealLogViewController" customModule="Nutrition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bPs-he-eMK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breakfast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNP-Zd-TfW">
+                                <rect key="frame" x="20" y="131" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="233-MB-rcT">
+                                <rect key="frame" x="20" y="543" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAE-Sn-FAV">
+                                <rect key="frame" x="20" y="333" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KvC-cN-tEU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Meal Log" id="XVg-GX-yjE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwF-cQ-QnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3089.8550724637685" y="827.67857142857144"/>
         </scene>
         <!--Home-->
         <scene sceneID="ze0-Qv-dwz">
@@ -649,6 +694,7 @@
         <image name="Line" width="1186" height="122"/>
         <image name="add" width="500" height="500"/>
         <image name="bookmark" catalog="system" width="56" height="64"/>
+        <image name="graph image" width="810" height="388"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="line2" width="1772" height="100"/>
         <image name="log" width="500" height="500"/>
@@ -657,7 +703,8 @@
         <image name="search" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="PIt-5f-pnc"/>
         <segue reference="Gc3-rX-2Ad"/>
-        <segue reference="EyF-Zt-lIn"/>
+        <segue reference="OOz-ux-b0J"/>
     </inferredMetricsTieBreakers>
 </document>
