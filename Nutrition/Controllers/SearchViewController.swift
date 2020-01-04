@@ -10,13 +10,12 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    enum SearchScope {
-        case database
-        case custom
-    }
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var currentSegmentIndex: Int = 0
     
     var foods = [Food]() {
         didSet {
@@ -32,7 +31,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    var currentScope = SearchScope.database
+    //var currentScope = SearchScope.database
     
     var searchQuery = "" {
         didSet {
@@ -74,34 +73,46 @@ class SearchViewController: UIViewController {
        
             customFoods = NewItemViewController.createdFoods
     }
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        currentSegmentIndex = sender.selectedSegmentIndex // valid values 0, 1
+        tableView.reloadData()
+
+    }
+    
 }
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch currentScope {
-        case .database:
+        switch currentSegmentIndex {
+        case 0:
             return foods.count
-        case .custom:
+        case 1:
             return customFoods.count
+        default:
+            return 0
         }
+        
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
         
-        switch currentScope {
-        case .database:
+        switch currentSegmentIndex {
+        case 0:
             let food = foods[indexPath.row]
             
             cell.textLabel?.text = food.fields.item_name.capitalized
             cell.detailTextLabel?.text = food.fields.brand_name
-        case .custom:
+        case 1:
             // never comes in here even once the currentScope is custom ???? 
             let food = customFoods[indexPath.row]
 
             cell.textLabel?.text = food.name
             cell.detailTextLabel?.text = food.numberOfCals?.description
+        default:
+            fatalError("Issue here")
         }
         
         return cell
@@ -125,19 +136,6 @@ extension SearchViewController: UISearchBarDelegate {
         
     }
     
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        switch selectedScope {
-        case 0:
-            //print("scope: 0")
-            currentScope = .database
-        case 1:
-            //print("scope: 1")
-            currentScope = .custom
-        default:
-            print("not a valid search scope")
-        }
-        
-    }
 }
 
 extension SearchViewController: UITableViewDelegate {
