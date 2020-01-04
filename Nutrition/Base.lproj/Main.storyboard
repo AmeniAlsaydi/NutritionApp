@@ -15,12 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search Food" translatesAutoresizingMaskIntoConstraints="NO" id="LeX-Ta-5UR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                            <searchBar contentMode="redraw" placeholder="Search Food" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeX-Ta-5UR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="103"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Database</string>
+                                    <string>Custom Meals</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ba-BV-fXr">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="191" width="414" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" textLabel="rUN-it-7We" detailTextLabel="th7-eY-JZ5" style="IBUITableViewCellStyleSubtitle" id="Tyw-9Y-2Jl">
@@ -55,14 +59,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0cs-xQ-TqG"/>
+                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4x8-iG-p5v"/>
                             <constraint firstItem="LeX-Ta-5UR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7bf-yF-7NA"/>
+                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9yi-mS-iGc"/>
                             <constraint firstItem="LeX-Ta-5UR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="C8q-Jn-Yc6"/>
-                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Eob-PJ-9bJ"/>
-                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="top" secondItem="LeX-Ta-5UR" secondAttribute="bottom" id="Nby-9k-ZLa"/>
-                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Rrs-3w-z3n"/>
-                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dy6-FQ-CbL"/>
+                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="top" secondItem="LeX-Ta-5UR" secondAttribute="bottom" id="MFt-Nu-VXl"/>
                             <constraint firstItem="LeX-Ta-5UR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ohk-zC-B3V"/>
-                            <constraint firstItem="6Ba-BV-fXr" firstAttribute="top" secondItem="LeX-Ta-5UR" secondAttribute="bottom" id="tR3-yR-B8v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -74,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3091" y="-664"/>
+            <point key="canvasLocation" x="3089.8550724637685" y="-664.28571428571422"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="WFs-vr-7Bx">
