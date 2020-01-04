@@ -27,18 +27,42 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var sugarLabel: UILabel!
     @IBOutlet weak var protein: UILabel!
     
-    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var selectedFood: Food?
+    var currentSegmentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
+    @IBAction func mealTypeChanged(_ sender: UISegmentedControl) {
+        currentSegmentIndex = sender.selectedSegmentIndex
+    }
     
-    @IBAction func addedButtonPressed(_ sender: UIButton) {
+    @IBAction func logFood(_ sender: UIButton) {
+        //var mealType = segmentedControl.titleForSegment(at: currentSegmentIndex)
         
+        guard let selectedFood = selectedFood else {
+            fatalError("issue with segue")
+        }
+        var food: LoggedFood!
+        
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+           food = LoggedFood(name: selectedFood.fields.item_name, meal: .breakfast)
+        case 1:
+            food = LoggedFood(name: selectedFood.fields.item_name, meal: .lunch)
+        case 2:
+            food = LoggedFood(name: selectedFood.fields.item_name, meal: .dinner)
+        default:
+            print("case doesnt exist")
+        }
+     
+        LoggedFood.loggedFoods.append(food)
+        
+        print(LoggedFood.loggedFoods.count)
     }
     
     func updateUI() {

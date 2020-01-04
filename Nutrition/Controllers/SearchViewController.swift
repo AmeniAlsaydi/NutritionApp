@@ -31,8 +31,6 @@ class SearchViewController: UIViewController {
         }
     }
     
-    //var currentScope = SearchScope.database
-    
     var searchQuery = "" {
         didSet {
             DispatchQueue.main.async {
@@ -92,8 +90,6 @@ extension SearchViewController: UITableViewDataSource {
         default:
             return 0
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -106,7 +102,6 @@ extension SearchViewController: UITableViewDataSource {
             cell.textLabel?.text = food.fields.item_name.capitalized
             cell.detailTextLabel?.text = food.fields.brand_name
         case 1:
-            // never comes in here even once the currentScope is custom ???? 
             let food = customFoods[indexPath.row]
 
             cell.textLabel?.text = food.name

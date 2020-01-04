@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70E94C523C04CC900AC7C0E /* loggedFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E94C423C04CC900AC7C0E /* loggedFood.swift */; };
 		B73206E323B5612700F68110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E223B5612700F68110 /* AppDelegate.swift */; };
 		B73206E523B5612700F68110 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E423B5612700F68110 /* SceneDelegate.swift */; };
 		B73206E723B5612700F68110 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E623B5612700F68110 /* MainViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B70E94C423C04CC900AC7C0E /* loggedFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loggedFood.swift; sourceTree = "<group>"; };
 		B73206DF23B5612700F68110 /* Nutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73206E223B5612700F68110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B73206E423B5612700F68110 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				B73206FC23B57AE200F68110 /* Food.swift */,
 				B74A25E423B713570067CD7B /* addedFood.swift */,
+				B70E94C423C04CC900AC7C0E /* loggedFood.swift */,
 				B74A25EB23BA2B650067CD7B /* FoodCell.swift */,
 				B74A25E023B6BE990067CD7B /* FoodInfo.swift */,
 			);
@@ -290,6 +293,7 @@
 				B74A25EC23BA2B650067CD7B /* FoodCell.swift in Sources */,
 				B73206E323B5612700F68110 /* AppDelegate.swift in Sources */,
 				B74A25E523B713570067CD7B /* addedFood.swift in Sources */,
+				B70E94C523C04CC900AC7C0E /* loggedFood.swift in Sources */,
 				B73206FF23B57C7D00F68110 /* FoodAPI.swift in Sources */,
 				B73206E523B5612700F68110 /* SceneDelegate.swift in Sources */,
 				B73206FD23B57AE200F68110 /* Food.swift in Sources */,
