@@ -31,8 +31,7 @@ class FoodCell: UITableViewCell {
     
     
     @IBAction func addItemPressed(_ sender: UIButton) {
-        addButton.setImage(nil, for: .normal)
-        addButton.isEnabled = false
+        addButton.isHidden = true
         delegate?.didAddItem(ingredient: selectedFood)
         
     }

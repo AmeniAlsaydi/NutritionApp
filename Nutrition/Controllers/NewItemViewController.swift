@@ -85,8 +85,6 @@ class NewItemViewController: UIViewController {
     }
     
     @IBAction func createNewPressed(_ sender: Any) {
-        textFeild.text = nil
-        ingredients = [Food]() // empties out foods
         dump(AddedFood.createdFoods)
         print(AddedFood.createdFoods.count)
     }
@@ -120,8 +118,9 @@ class NewItemViewController: UIViewController {
         // at the end
         showAlert(title: "\(mealName) added", message: "✅ 😋 ✅")
         
-        //TO DO: Re-enable the add buttons for the cell once a new meal has been created
-        
+        //Re-enable the add buttons for the cell once a new meal has been created
+        tableView.reloadData()
+        ingredients = [Food]()
     }
     
 }
@@ -136,6 +135,9 @@ extension NewItemViewController: UITableViewDataSource {
             fatalError("could not downcast to custom cell")
         }
         let foodItem = foods[indexPath.row]
+        
+        cell.addButton.isHidden = false // This is to Re-enable the add buttons for the cell once a new meal has been created
+
         cell.configureCell(foodItem: foodItem)
         cell.delegate = self
         return cell
