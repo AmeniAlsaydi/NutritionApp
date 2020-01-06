@@ -9,6 +9,4 @@ Users can also create a custom meal through searching for ingredients used in th
 can be added to the food diary or saved in their custom meals for later. The nutritional facts of the custom meal 
 are calculated for the user based on the food items used in it. 
 
-![](images/homeScreen.png =200x400)
-
 <img src="images/homeScreen.png" width="150">
