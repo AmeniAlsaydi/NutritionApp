@@ -19,6 +19,7 @@ class FoodCell: UITableViewCell {
     @IBOutlet weak var addButton: UIButton!
     
     var selectedFood: Food!
+    
     var delegate: FoodCellDelegate?
     
     func configureCell(foodItem: Food) {
@@ -26,6 +27,7 @@ class FoodCell: UITableViewCell {
         nameLabel.text = foodItem.fields.item_name
         brandLabel.text = foodItem.fields.brand_name
     }
+    
     
     
     @IBAction func addItemPressed(_ sender: UIButton) {

@@ -30,9 +30,9 @@ class NewItemViewController: UIViewController {
     }
     
     
-    static var createdFoods = [addedFood]() // i made this static so i can try and reference them in another vc ???
+    //static var createdFoods = [addedFood]() // i made this static so i can try and reference them in another vc ???
     var ingredients = [Food]()
-    var newMeal: addedFood?
+    var newMeal: AddedFood?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,8 +87,8 @@ class NewItemViewController: UIViewController {
     @IBAction func createNewPressed(_ sender: Any) {
         textFeild.text = nil
         ingredients = [Food]() // empties out foods
-        dump(NewItemViewController.createdFoods)
-        print(NewItemViewController.createdFoods.count)
+        dump(AddedFood.createdFoods)
+        print(AddedFood.createdFoods.count)
     }
     
     @IBAction func newMealButtonPressed(_ sender: UIButton) {
@@ -104,16 +104,17 @@ class NewItemViewController: UIViewController {
             case .failure(let appError):
                 print("here: \(appError)")
             case .success(let returnednumCals):
-                print(returnednumCals) // this has
+                print(returnednumCals)
                 numCals = returnednumCals
-                self.newMeal = addedFood(name: mealName, ingredients: self.ingredients, numberOfCals: numCals)
+                self.newMeal = AddedFood(name: mealName, ingredients: self.ingredients, numberOfCals: numCals)
                 guard let newMeal = self.newMeal else {
                     fatalError("no newMeal")
                 }
                 
-                NewItemViewController.createdFoods.append(newMeal)
+                AddedFood.createdFoods.append(newMeal)
                 
             }
+            self.textFeild.text = ""
         }
         
         // at the end

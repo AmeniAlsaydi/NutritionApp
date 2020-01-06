@@ -8,8 +8,10 @@
 
 import Foundation
 
-struct addedFood {
+struct AddedFood {
     let name: String
     let ingredients: [Food]
     let numberOfCals: Double?
+    
+static var createdFoods = [AddedFood]()
 }

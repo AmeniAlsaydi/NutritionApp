@@ -25,7 +25,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    var customFoods = [addedFood]() {
+    var customFoods = [AddedFood]() {
         didSet {
             tableView.reloadData()
         }
@@ -69,7 +69,7 @@ class SearchViewController: UIViewController {
                 }
             }
        
-            customFoods = NewItemViewController.createdFoods
+            customFoods = AddedFood.createdFoods
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
