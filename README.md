@@ -10,3 +10,5 @@ can be added to the food diary or saved in their custom meals for later. The nut
 are calculated for the user based on the food items used in it. 
 
 ![](images/homeScreen.png =200x400)
+
+<img src="images/homeScreen.png" width="48">
