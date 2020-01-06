@@ -10,21 +10,49 @@ import UIKit
 
 class MealLogViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var tableView: UITableView!
+    
+    var meals = [[LoggedFood]]() {
+        didSet {
+            tableView.reloadData()
+        }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
+        loadMeals()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+    
+    func loadMeals() {
+        meals = LoggedFood.sectionMeal()
+    }
 
+}
+
+extension MealLogViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return meals[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath)
+        
+        let meal = meals[indexPath.section][indexPath.row]
+        
+        cell.textLabel?.text = meal.name
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return meals.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return meals[section].first?.meal.rawValue.capitalized
+    }
+    
 }

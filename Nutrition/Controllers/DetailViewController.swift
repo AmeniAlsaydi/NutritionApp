@@ -42,7 +42,6 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func logFood(_ sender: UIButton) {
-        //var mealType = segmentedControl.titleForSegment(at: currentSegmentIndex)
         
         guard let selectedFood = selectedFood else {
             fatalError("issue with segue")
@@ -61,8 +60,6 @@ class DetailViewController: UIViewController {
         }
      
         LoggedFood.loggedFoods.append(food)
-        
-        print(LoggedFood.loggedFoods.count)
     }
     
     func updateUI() {
