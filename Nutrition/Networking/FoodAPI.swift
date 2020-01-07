@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NetworkHelper
 
 struct FoodAPIClient {
     static func getFoodList(searchQuery: String, completion: @escaping (Result<[Food], AppError>)-> ()) {
@@ -20,7 +21,7 @@ struct FoodAPIClient {
         
         let request = URLRequest(url: url)
         
-        NetworkHelper.shared.performDataTask(with: request) {(result) in
+        NetworkHelper.shared.performDataTask(with: request, maxCacheDays: 7) {(result) in
             switch result {
             case .failure(let appError):
                 completion(.failure(.networkClientError(appError)))
@@ -49,7 +50,7 @@ struct FoodAPIClient {
              
              let request = URLRequest(url: url)
              
-             NetworkHelper.shared.performDataTask(with: request) {(result) in
+             NetworkHelper.shared.performDataTask(with: request, maxCacheDays: 7) {(result) in
                  switch result {
                  case .failure(let appError):
                      completion(.failure(.networkClientError(appError)))

@@ -3,19 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B70E94C523C04CC900AC7C0E /* loggedFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70E94C423C04CC900AC7C0E /* loggedFood.swift */; };
+		B70E94F723C534FF00AC7C0E /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = B70E94F623C534FF00AC7C0E /* NetworkHelper */; };
 		B73206E323B5612700F68110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E223B5612700F68110 /* AppDelegate.swift */; };
 		B73206E523B5612700F68110 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E423B5612700F68110 /* SceneDelegate.swift */; };
 		B73206E723B5612700F68110 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206E623B5612700F68110 /* MainViewController.swift */; };
 		B73206EA23B5612700F68110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73206E823B5612700F68110 /* Main.storyboard */; };
 		B73206EC23B5612C00F68110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73206EB23B5612C00F68110 /* Assets.xcassets */; };
 		B73206EF23B5612C00F68110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B73206ED23B5612C00F68110 /* LaunchScreen.storyboard */; };
-		B73206F823B5783700F68110 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206F723B5783700F68110 /* NetworkHelper.swift */; };
-		B73206FA23B5788300F68110 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206F923B5788300F68110 /* AppError.swift */; };
 		B73206FD23B57AE200F68110 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206FC23B57AE200F68110 /* Food.swift */; };
 		B73206FF23B57C7D00F68110 /* FoodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73206FE23B57C7D00F68110 /* FoodAPI.swift */; };
 		B732070223B5854700F68110 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732070123B5854700F68110 /* Secrets.swift */; };
@@ -50,8 +49,6 @@
 		B73206EB23B5612C00F68110 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B73206EE23B5612C00F68110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B73206F023B5612C00F68110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B73206F723B5783700F68110 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		B73206F923B5788300F68110 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		B73206FC23B57AE200F68110 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B73206FE23B57C7D00F68110 /* FoodAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPI.swift; sourceTree = "<group>"; };
 		B732070123B5854700F68110 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -73,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B70E94F723C534FF00AC7C0E /* NetworkHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +123,6 @@
 		B73206F623B5781800F68110 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				B73206F723B5783700F68110 /* NetworkHelper.swift */,
-				B73206F923B5788300F68110 /* AppError.swift */,
 				B73206FE23B57C7D00F68110 /* FoodAPI.swift */,
 			);
 			path = Networking;
@@ -197,6 +193,9 @@
 			dependencies = (
 			);
 			name = Nutrition;
+			packageProductDependencies = (
+				B70E94F623C534FF00AC7C0E /* NetworkHelper */,
+			);
 			productName = Nutrition;
 			productReference = B73206DF23B5612700F68110 /* Nutrition.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +246,9 @@
 				Base,
 			);
 			mainGroup = B73206D623B5612700F68110;
+			packageReferences = (
+				B70E94F523C534FF00AC7C0E /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */,
+			);
 			productRefGroup = B73206E023B5612700F68110 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,13 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74A25E323B6CA110067CD7B /* DetailViewController.swift in Sources */,
-				B73206F823B5783700F68110 /* NetworkHelper.swift in Sources */,
 				B732070223B5854700F68110 /* Secrets.swift in Sources */,
 				B73206E723B5612700F68110 /* MainViewController.swift in Sources */,
 				B74A25E123B6BE990067CD7B /* FoodInfo.swift in Sources */,
 				B732071323B5C12D00F68110 /* SearchViewController.swift in Sources */,
 				B74A25EE23BCF3A10067CD7B /* MealLogViewController.swift in Sources */,
-				B73206FA23B5788300F68110 /* AppError.swift in Sources */,
 				B74A25EC23BA2B650067CD7B /* FoodCell.swift in Sources */,
 				B73206E323B5612700F68110 /* AppDelegate.swift in Sources */,
 				B74A25E523B713570067CD7B /* AddedFood.swift in Sources */,
@@ -561,6 +561,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B70E94F523C534FF00AC7C0E /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/NetworkHelperSPM";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B70E94F623C534FF00AC7C0E /* NetworkHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B70E94F523C534FF00AC7C0E /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */;
+			productName = NetworkHelper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B73206D723B5612700F68110 /* Project object */;
 }

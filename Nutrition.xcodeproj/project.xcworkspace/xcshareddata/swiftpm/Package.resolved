@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "NetworkHelper",
+        "repositoryURL": "https://github.com/alexpaul/NetworkHelperSPM",
+        "state": {
+          "branch": null,
+          "revision": "45c1b27713db8916b8ddff6bd298e72d53d675d6",
+          "version": "1.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
